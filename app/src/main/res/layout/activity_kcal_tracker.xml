@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.kcalTracker"
+    android:background="@drawable/white_wallpaper">
+
+    <include
+        android:id="@+id/includedButton"
+        layout="@layout/activity_button_return_dashboard"/>
+
+    <TextView
+        android:id="@+id/tvInfoKcal"
+        android:layout_marginTop="-1dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Ingresa las calorías que vayas consumiento al día"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includedButton"/>
+    <TextView
+        android:id="@+id/tvLastText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cuando finalice tu día, recuerda dar click en el último botón"
+        android:textSize="12dp"
+        android:fontFamily="sans-serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoKcal"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_Bonita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvLastText"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:id="@+id/tvCalPorDay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Calorías Por día"
+                android:textSize="20dp"
+                android:gravity="center_vertical"/>
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="match_parent"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btCalPorDay"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:background="@drawable/imc_icon"
+                android:text="this is text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btCalRestantes"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:background="@drawable/imc_icon"
+                android:text="this is text"/>
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/tvBCalRestante"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Calorías restantes"
+                android:textSize="20dp"
+                android:gravity="center_vertical"/>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiCalsIngresadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Calorias que acabas de consumir"
+                android:textSize="14dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btGuardar"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:text="Agregar"
+        android:backgroundTint="@color/pink_purple"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_Bonita"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btFinDia"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:text="Fin del día"
+        android:backgroundTint="@color/dark_purple"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btGuardar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
