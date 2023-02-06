@@ -33,6 +33,7 @@ public class Dashboard extends AppCompatActivity {
         //Connect XML Components
         ibCronometro = (ImageButton) findViewById(R.id.ibCronometro);
         ibRecomendaciones = (ImageButton) findViewById(R.id.ibRecomendaciones);
+        ibUpdate = (ImageButton) findViewById(R.id.ibUpdate);
 
         //For buttons
         ibCronometro.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +47,13 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 StartActivity(Recomendaciones.class);
+            }
+        });
+
+        ibUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StartActivity(NewInformation.class);
             }
         });
 

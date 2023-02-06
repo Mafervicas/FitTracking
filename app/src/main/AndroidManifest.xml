@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.evidenciafinal" >
+    package="com.example.evidenciafinal">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -10,22 +10,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EvidenciaFinal" >
+        android:theme="@style/Theme.EvidenciaFinal">
         <activity
-            android:name=".utils.buttonReturnDashboard"
-            android:exported="false" >
+            android:name=".views.NewInformation"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".views.Dashboard"
-            android:exported="false" >
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".views.Registration" >
+        <activity android:name=".views.Registration">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -37,7 +37,7 @@
         <activity android:name=".IngestaAgua" />
         <activity android:name=".Calculos" />
         <activity android:name=".views.Cronometro" />
-        <activity android:name=".views.SplashScreen" >
+        <activity android:name=".views.SplashScreen">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
