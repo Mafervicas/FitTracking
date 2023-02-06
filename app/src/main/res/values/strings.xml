@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">EvidenciaFinal</string>
+    <string name="cronometro">Cronómetro</string>
+    <string name="tu_peso">Tu peso:</string>
+    <string name="todo">TODO</string>
+    <string name="tu_altura">Tu Altura:</string>
+    <string name="tu_edad">Tu Edad:</string>
+    <string name="indice_de_masa_corporal">Indice de Masa Corporal</string>
+    <string name="tu_imc_es">Tu IMC es</string>
+    <string name="saludable">¿Saludable?</string>
+    <string name="cantidad_de_agua">Cantidad de Agua</string>
+    <string name="mililitros">Mililitros</string>
+    <string name="que_debes_tomar">Que debes tomar</string>
+    <string name="cm">cm</string>
+    <string name="kg">kg</string>
+    <string name="a_os">años</string>
+    <string name="tablero_fit_pinterest">Tablero fit Pinterest</string>
+    <string name="lista_en_yt">Lista en YT</string>
+    <string name="fitmalesclub_ig">Fitmalesclub IG</string>
+    <string name="katb_fit_ig">Katb_fit IG</string>
+    <string name="coach_fav">Coach fav</string>
+    <string name="vitonica_com">Vitonica.com</string>
+    <string name="winniegana_com">Winniegana.com</string>
+    <string name="c_lculos">Cálculos</string>
+    <string name="trackers">Trackers</string>
+    <string name="para_ti">Para ti</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_consulta">Consulta</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_actividad1">Actividad1</string>
+    <string name="title_activity_datos">Datos</string>
+    <string name="title_activity_home_button">homeButton</string>
+
+</resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.Dashboard"
+    android:background="@drawable/white_wallpaper_dashboard">
+    <View
+        android:id="@+id/viewInitial"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/light_purple"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/firstLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btIMC"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:background="@drawable/imc_icon"
+            android:text="this is text"/>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btWater"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:background="@drawable/water_icon"
+            android:text="this is text"/>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btCalories"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:background="@drawable/calories_icon"
+            android:text="this is text"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvBienvenidaDashbord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hola nuevamente"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/firstLL"/>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvBienvenidaDashbord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibCronometro"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:background="@drawable/cronometro_btn" />
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:id="@+id/ibTracker"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:background="@drawable/tracker" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibUpdate"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:background="@drawable/new_info" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:id="@+id/ibRecomendaciones"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:background="@drawable/recomendation" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ibEstadisticas"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:background="@drawable/stadistics" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+
+            <ImageButton
+                android:id="@+id/ibLogo"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:background="@drawable/fittracking_button_rounded" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
