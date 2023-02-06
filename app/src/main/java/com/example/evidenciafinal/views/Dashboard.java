@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.evidenciafinal.R;
 
@@ -70,6 +71,50 @@ public class Dashboard extends AppCompatActivity {
         btWater.setText(df.format(water) + " lts");
         btImc.setText(df.format(imc) + " IMC ");
 
+        //For toast
+        String caloriesToast = "Las calorías recomendadas para una pérdida saludable de peso para ti son: "+ df.format(kcals) + " kcals";
+        String waterToast = "Gracias a la información que nos proporcionaste, los litros de agua que deberías estar tomando son: "+ df.format(water);
+        String IMCResultado = getFinalIMC(imc);
+
+        btCalories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Dashboard.this, caloriesToast, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Dashboard.this, waterToast, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btImc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Dashboard.this, "Según la OMS tu IMC se encuentra en "+ IMCResultado, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private String getFinalIMC(double IMC) {
+        //Condicionamos el saludable
+        if(IMC<18.5){
+            return "Insuficiencia ponderal";
+        } else if (IMC>= 18.5 && IMC<= 24.99){
+            return "Intervalo normal";
+        } else if (IMC>=25.00 && IMC<=29.99){
+            return "Pre-Obecidad";
+        } else if (IMC>=30.00 && IMC<=34.99){
+            return "Obesidad de clase I";
+        } else if (IMC>=35.00 && IMC<=39.99){
+            return "Obesidad de clase II";
+        }
+        else{
+            return "Obesidad de clase III";
+        }
     }
 
     private void StartActivity(Class<?> intentClass) {
