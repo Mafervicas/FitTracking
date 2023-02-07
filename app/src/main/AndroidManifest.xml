@@ -44,12 +44,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".Datos" />
-        <activity android:name=".Perfil" />
         <activity android:name=".views.Recomendaciones" />
-        <activity android:name=".Calorias" />
-        <activity android:name=".IngestaAgua" />
-        <activity android:name=".Calculos" />
         <activity android:name=".views.Cronometro" />
         <activity android:name=".views.SplashScreen">
             <meta-data

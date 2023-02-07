@@ -2,8 +2,11 @@ package com.example.evidenciafinal.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.evidenciafinal.R;
 import com.github.mikephil.charting.charts.LineChart;
@@ -21,6 +24,7 @@ public class Stadistics extends AppCompatActivity {
     LineData lineData;
     LineDataSet lineDataSet;
     ArrayList lineEntries;
+    ImageButton buttonReturnDashboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,15 @@ public class Stadistics extends AppCompatActivity {
         lineDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
         lineDataSet.setValueTextColor(Color.BLACK);
         lineDataSet.setValueTextSize(18f);
+
+        //Button Dashboard
+        buttonReturnDashboard = findViewById(R.id.includedButton).findViewById(R.id.ibLogo);
+        buttonReturnDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMainActivity();
+            }
+        });
     }
 
     private void getEntries() {
@@ -44,6 +57,11 @@ public class Stadistics extends AppCompatActivity {
         lineEntries.add(new Entry(8f, 3));
         lineEntries.add(new Entry(7f, 4));
         lineEntries.add(new Entry(3f, 3));
+    }
+
+    public void openMainActivity(){
+        Intent intent = new Intent(this, Dashboard.class);
+        startActivity(intent);
     }
 
 }
