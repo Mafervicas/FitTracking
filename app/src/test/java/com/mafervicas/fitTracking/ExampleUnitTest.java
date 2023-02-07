@@ -1,4 +1,4 @@
-package com.example.evidenciafinal;
+package com.mafervicas.fitTracking;
 
 import org.junit.Test;
 

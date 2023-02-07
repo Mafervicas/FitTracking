@@ -1,4 +1,4 @@
-package com.example.evidenciafinal.views;
+package com.mafervicas.fitTracking.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,8 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.evidenciafinal.R;
-import com.example.evidenciafinal.views.Dashboard;
+import com.mafervicas.fitTracking.R;
 
 public class Recomendaciones extends AppCompatActivity {
 

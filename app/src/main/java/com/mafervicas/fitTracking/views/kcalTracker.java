@@ -1,4 +1,4 @@
-package com.example.evidenciafinal.views;
+package com.mafervicas.fitTracking.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -13,8 +13,8 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.evidenciafinal.R;
-import com.example.evidenciafinal.model.DatosDB;
+import com.mafervicas.fitTracking.R;
+import com.mafervicas.fitTracking.model.DatosDB;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.DateFormat;

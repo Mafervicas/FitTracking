@@ -1,4 +1,4 @@
-package com.example.evidenciafinal.views;
+package com.mafervicas.fitTracking.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.evidenciafinal.R;
+import com.mafervicas.fitTracking.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;

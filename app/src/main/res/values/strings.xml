@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EvidenciaFinal</string>
+    <string name="app_name">fitTracking</string>
     <string name="cronometro">Cronómetro</string>
     <string name="tu_peso">Tu peso:</string>
     <string name="todo">TODO</string>

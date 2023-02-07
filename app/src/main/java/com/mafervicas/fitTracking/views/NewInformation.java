@@ -1,4 +1,4 @@
-package com.example.evidenciafinal.views;
+package com.mafervicas.fitTracking.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,28 +14,26 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.evidenciafinal.R;
-import com.example.evidenciafinal.model.DatosDB;
+import com.mafervicas.fitTracking.R;
+import com.mafervicas.fitTracking.model.DatosDB;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Registration extends AppCompatActivity {
+public class NewInformation extends AppCompatActivity {
+
     //Starting with the initialization of variables
     private Button btnSiguiente;
     DatosDB myDb;
-    TextInputEditText tiNombre, tiEdad, tiAltura, tiPeso;
+    TextInputEditText tiEdad, tiAltura, tiPeso;
     SharedPreferences sp;
     ProgressBar myProgressBar;
     Spinner s;
+    ImageButton buttonReturnDashboard;
 
-    //String with the information of the water & Exercise
-    private String stringQueMandaremos;
-    public static final String STRING_QUE_MANDAREMOS = "com.example.evidenciafinal.STRING_QUE_MANDAREMOS";
     String exerciseFreq;
     Integer exerciseMultiply;
 
@@ -48,14 +46,13 @@ public class Registration extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_new_information);
 
         //Connect XML Components
-        tiNombre = (TextInputEditText) findViewById(R.id.tiNombre);
         tiPeso = (TextInputEditText) findViewById(R.id.tiPeso);
         tiAltura = (TextInputEditText) findViewById(R.id.tiAltura);
         tiEdad = (TextInputEditText) findViewById(R.id.tiEdad);
-        btnSiguiente = (Button) findViewById(R.id.btnSiguiente);
+        btnSiguiente = (Button) findViewById(R.id.btnGuardar);
         myProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         s = (Spinner) findViewById(R.id.spinnerExercise);
 
@@ -73,6 +70,15 @@ public class Registration extends AppCompatActivity {
             }
         });
 
+        //Button Dashboard
+        buttonReturnDashboard = findViewById(R.id.includedButton).findViewById(R.id.ibLogo);
+        buttonReturnDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMainActivity();
+            }
+        });
+
         //Call DB constructor Llama el constructor
         myDb = new DatosDB(this);
 
@@ -84,12 +90,10 @@ public class Registration extends AppCompatActivity {
                 String peso = tiPeso.getText().toString();
                 String altura = tiAltura.getText().toString();
                 String edad = tiEdad.getText().toString();
-                String nombre = tiNombre.getText().toString();
-                String nameStr = tiNombre.getText().toString();
 
-                if(peso.isEmpty() || altura.isEmpty() || edad.isEmpty() || nombre.isEmpty()){
+                if(peso.isEmpty() || altura.isEmpty() || edad.isEmpty()){
                     //Missing fields
-                    Toast.makeText(Registration.this, "Favor de llenar todos los campos",Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewInformation.this, "Favor de llenar todos los campos",Toast.LENGTH_LONG).show();
                 } else {
                     //Show ProgressBar
                     myProgressBar.setVisibility(View.VISIBLE);
@@ -114,7 +118,6 @@ public class Registration extends AppCompatActivity {
                     //Add name to Shared preferences
                     sp = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("name", nameStr);
                     editor.putString("imc", IMC.toString());
                     editor.putString("water", Ingesta.toString());
                     editor.putString("kcals", kcalsFinales.toString());
@@ -149,13 +152,17 @@ public class Registration extends AppCompatActivity {
         if(addInformation = true) {
             //Make invisible progress bar
             myProgressBar.setVisibility(View.INVISIBLE);
-            Toast.makeText(Registration.this, "Agregado correctamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(NewInformation.this, "Agregado correctamente", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, Dashboard.class);
-            intent.putExtra(STRING_QUE_MANDAREMOS, stringQueMandaremos);
             startActivity(intent);
 
         } else {
-            Toast.makeText(Registration.this, "Problemas al insertar", Toast.LENGTH_LONG).show();
+            Toast.makeText(NewInformation.this, "Problemas al insertar", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void openMainActivity(){
+        Intent intent = new Intent(this, Dashboard.class);
+        startActivity(intent);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.evidenciafinal;
+package com.mafervicas.fitTracking;
 
 import android.content.ContentValues;
 import android.content.Context;

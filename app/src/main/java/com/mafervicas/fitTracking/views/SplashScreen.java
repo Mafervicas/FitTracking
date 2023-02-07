@@ -1,4 +1,4 @@
-package com.example.evidenciafinal.views;
+package com.mafervicas.fitTracking.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.example.evidenciafinal.R;
+import com.mafervicas.fitTracking.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

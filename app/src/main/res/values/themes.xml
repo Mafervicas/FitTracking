@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.EvidenciaFinal" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.fitTracking" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -15,12 +15,12 @@
         <item name="android:fontFamily">@font/main_font_ft</item>
     </style>
 
-    <style name="Theme.EvidenciaFinal.NoActionBar">
+    <style name="Theme.fitTracking.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.EvidenciaFinal.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.fitTracking.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.EvidenciaFinal.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.fitTracking.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
