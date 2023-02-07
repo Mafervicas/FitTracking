@@ -37,7 +37,7 @@ public class DatosDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         //Create a query to create table
         String table1 = "CREATE TABLE "+ TABLE_NAME + "(Fecha STRING PRIMARY KEY, Peso DOUBLE, Altura DOUBLE, Edad INTEGER, IMC DOUBLE, IngestaAgua DOUBLE, Kcals DOUBLE, ExerciseFreq STRING)";
-        String table2 = "CREATE TABLE " + TABLE_NAME2 + "(FechaKCal STRING PRIMARY KEY, KcalMeta DOUBLE, KcalAcumuladas DOUBLE, ObjectivoCumplido BOOLEAN)";
+        String table2 = "CREATE TABLE " + TABLE_NAME2 + "(FechaKCal STRING PRIMARY KEY, KcalMeta DOUBLE, KcalAcumuladas DOUBLE, ObjectivoCumplido Integer)";
         sqLiteDatabase.execSQL(table1);
         sqLiteDatabase.execSQL(table2);
 
@@ -47,7 +47,7 @@ public class DatosDB extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         //Delete table
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME2);
         //Creates it again
         onCreate(sqLiteDatabase);
     }
@@ -65,7 +65,7 @@ public class DatosDB extends SQLiteOpenHelper {
         contentValues.put(COL_5, imc);
         contentValues.put(COL_6, ingestaagua);
         contentValues.put(COL_7, kcals);
-        contentValues.put(COL_7, exercisefreq);
+        contentValues.put(COL_8, exercisefreq);
         //Insert data
         long result = db.insert(TABLE_NAME,null, contentValues);
         //Return if the info was added successfully or not
@@ -76,7 +76,7 @@ public class DatosDB extends SQLiteOpenHelper {
     }
 
     //Method to Insert Kcals on DB
-    public boolean insertKcalData(String fechakcal, Double kcalmeta,Double kcalacumuladas, Boolean objetivocumplido){
+    public boolean insertKcalData(String fechakcal, Double kcalmeta,Double kcalacumuladas, Integer objetivocumplido){
         //Create the instance
         SQLiteDatabase db = this.getWritableDatabase();
         //Assing values
@@ -86,7 +86,7 @@ public class DatosDB extends SQLiteOpenHelper {
         contentValues.put(COL_12, kcalacumuladas);
         contentValues.put(COL_13, objetivocumplido);
         //Insert data
-        long result = db.insert(TABLE_NAME,null, contentValues);
+        long result = db.insert(TABLE_NAME2,null, contentValues);
         //Return if the info was added successfully or not
         if(result == -1)
             return false;

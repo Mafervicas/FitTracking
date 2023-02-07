@@ -79,7 +79,7 @@ public class Dashboard extends AppCompatActivity {
         String name = preferences.getString("name", null);
         double water = Double.parseDouble(preferences.getString("water", null));
         double imc = Double.parseDouble(preferences.getString("imc", null));
-        double kcals = Double.parseDouble(preferences.getString("kcals","0"));
+        double kcals = Double.parseDouble(preferences.getString("kcalsRestantes","0"));
 
         //Put on text
         tvBienvenidaDashbord.setText("Hola nuevamente, " + name);

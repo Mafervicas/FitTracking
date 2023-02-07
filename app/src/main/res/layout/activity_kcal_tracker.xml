@@ -13,7 +13,6 @@
 
     <TextView
         android:id="@+id/tvInfoKcal"
-        android:layout_marginTop="-1dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -24,6 +23,7 @@
         app:layout_constraintTop_toBottomOf="@+id/includedButton"/>
     <TextView
         android:id="@+id/tvLastText"
+        android:layout_marginTop="1dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cuando finalice tu día, recuerda dar click en el último botón"
@@ -132,5 +132,17 @@
         app:layout_constraintTop_toBottomOf="@id/btGuardar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:visibility="invisible"
+        android:layout_width="169dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/btFinDia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/light_purple"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
