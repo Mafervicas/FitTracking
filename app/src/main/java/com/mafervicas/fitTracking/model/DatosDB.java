@@ -2,8 +2,11 @@ package com.mafervicas.fitTracking.model;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.Date;
 
 public class DatosDB extends SQLiteOpenHelper {
     //Creation of DB
@@ -11,7 +14,8 @@ public class DatosDB extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "mainData_tb";
 
     //Columns
-    public static final String COL_1= "Fecha";
+    public static final String COL_0 = "IdDia";
+    public static final String COL_1 = "Fecha";
     public static final String COL_2 = "Peso";
     public static final String COL_3 = "Altura";
     public static final String COL_4 = "Edad";
@@ -36,7 +40,7 @@ public class DatosDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         //Create a query to create table
-        String table1 = "CREATE TABLE "+ TABLE_NAME + "(Fecha STRING PRIMARY KEY, Peso DOUBLE, Altura DOUBLE, Edad INTEGER, IMC DOUBLE, IngestaAgua DOUBLE, Kcals DOUBLE, ExerciseFreq STRING)";
+        String table1 = "CREATE TABLE "+ TABLE_NAME + "(IdDia INTEGER PRIMARY KEY AUTOINCREMENT, Fecha STRING, Peso DOUBLE, Altura DOUBLE, Edad INTEGER, IMC DOUBLE, IngestaAgua DOUBLE, Kcals DOUBLE, ExerciseFreq STRING)";
         String table2 = "CREATE TABLE " + TABLE_NAME2 + "(FechaKCal STRING PRIMARY KEY, KcalMeta DOUBLE, KcalAcumuladas DOUBLE, ObjectivoCumplido Integer)";
         sqLiteDatabase.execSQL(table1);
         sqLiteDatabase.execSQL(table2);
@@ -93,4 +97,12 @@ public class DatosDB extends SQLiteOpenHelper {
         else
             return true;
     }
+
+    //Method to Return the last 5 records of mainData_tb
+    public Cursor getLast5() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME + " order by IdDia desc limit 5 " , null);
+        return res;
+    }
+
 }
