@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.mafervicas.fitTracking.R;
 import com.mafervicas.fitTracking.model.DatosDB;
 import com.google.android.material.textfield.TextInputEditText;
+import com.mafervicas.fitTracking.utils.Constants;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -40,7 +41,7 @@ public class NewInformation extends AppCompatActivity {
 
     //To get the date
     Date date = Calendar.getInstance().getTime();
-    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+    DateFormat dateFormat = new SimpleDateFormat(Constants.PATTERN_DATE);
     String strDate = dateFormat.format(date);
 
     @Override
@@ -93,7 +94,7 @@ public class NewInformation extends AppCompatActivity {
 
                 if(peso.isEmpty() || altura.isEmpty() || edad.isEmpty()){
                     //Missing fields
-                    Toast.makeText(NewInformation.this, "Favor de llenar todos los campos",Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewInformation.this, Constants.COMPLETE_INFO,Toast.LENGTH_LONG).show();
                 } else {
                     //Show ProgressBar
                     myProgressBar.setVisibility(View.VISIBLE);
@@ -152,12 +153,12 @@ public class NewInformation extends AppCompatActivity {
         if(addInformation == true) {
             //Make invisible progress bar
             myProgressBar.setVisibility(View.INVISIBLE);
-            Toast.makeText(NewInformation.this, "Agregado correctamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(NewInformation.this, Constants.SUCCESS_DATA, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, Dashboard.class);
             startActivity(intent);
 
         } else {
-            Toast.makeText(NewInformation.this, "Problemas al insertar", Toast.LENGTH_LONG).show();
+            Toast.makeText(NewInformation.this, Constants.ERROR_MODAL, Toast.LENGTH_LONG).show();
         }
     }
 

@@ -22,6 +22,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.mafervicas.fitTracking.model.DatosDB;
+import com.mafervicas.fitTracking.utils.Constants;
 
 import java.util.ArrayList;
 
@@ -96,7 +97,7 @@ public class Stadistics extends AppCompatActivity {
         Cursor resultQuery = myDb.getLast5();
         if (resultQuery.getCount() == 0) {
             //Show a tost
-            Toast.makeText(this, "No se encontró registros", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, Constants.NO_REGISTERS, Toast.LENGTH_SHORT).show();
             return;
         }
         StringBuffer buffer = new StringBuffer();

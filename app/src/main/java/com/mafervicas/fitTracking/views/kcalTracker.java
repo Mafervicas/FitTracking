@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.mafervicas.fitTracking.R;
 import com.mafervicas.fitTracking.model.DatosDB;
 import com.google.android.material.textfield.TextInputEditText;
+import com.mafervicas.fitTracking.utils.Constants;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -43,7 +44,7 @@ public class kcalTracker extends AppCompatActivity {
 
     //To get the date
     Date date = Calendar.getInstance().getTime();
-    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+    DateFormat dateFormat = new SimpleDateFormat(Constants.PATTERN_DATE);
     String strDate = dateFormat.format(date);
 
     @Override
@@ -111,11 +112,11 @@ public class kcalTracker extends AppCompatActivity {
                     editor.putString("kcalsRestantes", String.valueOf(kcals));
                     editor.commit();
                     //Make Toast & Return
-                    Toast.makeText(kcalTracker.this, "Datos agregados Correctamente", Toast.LENGTH_LONG).show();
+                    Toast.makeText(kcalTracker.this, Constants.SUCCESS_DATA, Toast.LENGTH_LONG).show();
                     openMainActivity();
 
                 } else {
-                    Toast.makeText(kcalTracker.this, "Problemas al insertar", Toast.LENGTH_LONG).show();
+                    Toast.makeText(kcalTracker.this, Constants.ERROR_MODAL, Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -127,8 +128,8 @@ public class kcalTracker extends AppCompatActivity {
         kcalsRestantes = Double.parseDouble(preferences.getString("kcalsRestantes", String.valueOf(kcals)));
 
         //Put on text
-        btCalPorDay.setText(df.format(kcals) + " kls");
-        btCalRestantes.setText(df.format(kcalsRestantes) + " kls");
+        btCalPorDay.setText(df.format(kcals) + " kcls");
+        btCalRestantes.setText(df.format(kcalsRestantes) + " kcls");
     }
 
     public void openMainActivity(){

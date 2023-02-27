@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.mafervicas.fitTracking.R;
 import com.mafervicas.fitTracking.model.DatosDB;
 import com.google.android.material.textfield.TextInputEditText;
+import com.mafervicas.fitTracking.utils.Constants;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -32,15 +33,13 @@ public class Registration extends AppCompatActivity {
     Spinner s;
 
     //String with the information of the water & Exercise
-    private String stringQueMandaremos;
-    public static final String STRING_QUE_MANDAREMOS = "com.example.evidenciafinal.STRING_QUE_MANDAREMOS";
     String exerciseFreq;
     Integer exerciseMultiply;
 
 
     //To get the date
     Date date = Calendar.getInstance().getTime();
-    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+    DateFormat dateFormat = new SimpleDateFormat(Constants.PATTERN_DATE);
     String strDate = dateFormat.format(date);
 
     @Override
@@ -87,7 +86,7 @@ public class Registration extends AppCompatActivity {
 
                 if(peso.isEmpty() || altura.isEmpty() || edad.isEmpty() || nombre.isEmpty()){
                     //Missing fields
-                    Toast.makeText(Registration.this, "Favor de llenar todos los campos",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Registration.this, Constants.COMPLETE_INFO,Toast.LENGTH_LONG).show();
                 } else {
                     //Show ProgressBar
                     myProgressBar.setVisibility(View.VISIBLE);
@@ -147,13 +146,12 @@ public class Registration extends AppCompatActivity {
         if(addInformation == true) {
             //Make invisible progress bar
             myProgressBar.setVisibility(View.INVISIBLE);
-            Toast.makeText(Registration.this, "Agregado correctamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Registration.this, Constants.SUCCESS_DATA, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, Dashboard.class);
-            intent.putExtra(STRING_QUE_MANDAREMOS, stringQueMandaremos);
             startActivity(intent);
 
         } else {
-            Toast.makeText(Registration.this, "Problemas al insertar", Toast.LENGTH_LONG).show();
+            Toast.makeText(Registration.this, Constants.ERROR_MODAL, Toast.LENGTH_LONG).show();
         }
     }
 }
