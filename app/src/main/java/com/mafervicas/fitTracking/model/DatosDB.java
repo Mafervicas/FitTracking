@@ -41,7 +41,7 @@ public class DatosDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         //Create a query to create table
         String table1 = "CREATE TABLE "+ TABLE_NAME + "(IdDia INTEGER PRIMARY KEY AUTOINCREMENT, Fecha STRING, Peso DOUBLE, Altura DOUBLE, Edad INTEGER, IMC DOUBLE, IngestaAgua DOUBLE, Kcals DOUBLE, ExerciseFreq STRING)";
-        String table2 = "CREATE TABLE " + TABLE_NAME2 + "(FechaKCal STRING PRIMARY KEY, KcalMeta DOUBLE, KcalAcumuladas DOUBLE, ObjectivoCumplido Integer)";
+        String table2 = "CREATE TABLE " + TABLE_NAME2 + "(FechaKCal STRING PRIMARY KEY, KcalMeta DOUBLE, KcalAcumuladas DOUBLE, ObjetivoCumplido Integer)";
         sqLiteDatabase.execSQL(table1);
         sqLiteDatabase.execSQL(table2);
 
