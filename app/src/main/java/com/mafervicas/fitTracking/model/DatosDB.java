@@ -101,7 +101,7 @@ public class DatosDB extends SQLiteOpenHelper {
     //Method to Return the last 5 records of mainData_tb
     public Cursor getLast5() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from " + TABLE_NAME + " order by IdDia desc limit 5 " , null);
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME + " order by IdDia asc limit 5 " , null);
         return res;
     }
 
