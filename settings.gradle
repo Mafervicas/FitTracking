@@ -1,2 +1,2 @@
-rootProject.name = "EvidenciaFinal"
+rootProject.name = "fitTracking"
 include ':app'

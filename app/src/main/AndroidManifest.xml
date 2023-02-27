@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.evidenciafinal" >
+    package="com.mafervicas.fitTracking">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -10,34 +10,43 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EvidenciaFinal" >
+        android:theme="@style/Theme.fitTracking">
         <activity
-            android:name=".utils.buttonReturnDashboard"
-            android:exported="false" >
+            android:name="com.mafervicas.fitTracking.views.Stadistics"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".views.Dashboard"
-            android:exported="false" >
+            android:name="com.mafervicas.fitTracking.views.kcalTracker"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".views.Registration" >
+        <activity
+            android:name="com.mafervicas.fitTracking.views.NewInformation"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".Datos" />
-        <activity android:name=".Perfil" />
-        <activity android:name=".views.Recomendaciones" />
-        <activity android:name=".Calorias" />
-        <activity android:name=".IngestaAgua" />
-        <activity android:name=".Calculos" />
-        <activity android:name=".views.Cronometro" />
-        <activity android:name=".views.SplashScreen" >
+        <activity
+            android:name="com.mafervicas.fitTracking.views.Dashboard"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name="com.mafervicas.fitTracking.views.Registration">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name="com.mafervicas.fitTracking.views.Recomendaciones" />
+        <activity android:name="com.mafervicas.fitTracking.views.Cronometro" />
+        <activity android:name="com.mafervicas.fitTracking.views.SplashScreen">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

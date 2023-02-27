@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EvidenciaFinal</string>
+    <string name="app_name">fitTracking</string>
     <string name="cronometro">Cronómetro</string>
     <string name="tu_peso">Tu peso:</string>
     <string name="todo">TODO</string>
@@ -38,5 +38,14 @@
     <string name="title_activity_actividad1">Actividad1</string>
     <string name="title_activity_datos">Datos</string>
     <string name="title_activity_home_button">homeButton</string>
+
+    <string-array name="exercise_frequency">
+        <item>Frecuencia de ejercicio</item>
+        <item>Poco o nada de ejercicio</item>
+        <item>1 a 3 días de ejercicio</item>
+        <item>3 a 5 días de ejercicio</item>
+        <item>6 a 7 días de ejercicio</item>
+        <item>Atleta(Entreno doble)</item>
+    </string-array>
 
 </resources>
