@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.components.Legend;
@@ -34,19 +35,26 @@ public class Stadistics extends AppCompatActivity {
     ArrayList lineEntries;
     ImageButton buttonReturnDashboard;
     DatosDB myDb;
+    TextView tvlbls, tvlbls2, tvlbls3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stadistics);
+        //Conect XML components
+        tvlbls = (TextView) findViewById(R.id.tvlbls);
+        tvlbls2 = (TextView) findViewById(R.id.tvlbls2);
+        tvlbls3 = (TextView) findViewById(R.id.tvlbls3);
         //Bring al variables needed for the graph
         lineChart = findViewById(R.id.lineChart);
         getEntries();
         lineDataSet = new LineDataSet(lineEntries, "");
         lineData = new LineData(lineDataSet);
-        // draw points over time
+        //Draw points over time
         lineChart.animateX(1900);
+        //Set data
         lineChart.setData(lineData);
+        //Set style
         lineDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
         lineDataSet.setValueTextColor(Color.BLACK);
         lineDataSet.setValueTextSize(18f);
@@ -92,18 +100,29 @@ public class Stadistics extends AppCompatActivity {
             return;
         }
         StringBuffer buffer = new StringBuffer();
+        String[] minMaxDates = new String[5];
         while (resultQuery.moveToNext()) {
             buffer.append("Registro ID: " + resultQuery.getString(0) + "\n");
             buffer.append("Fecha: " + resultQuery.getString(1) + "\n");
             buffer.append("Peso: " + resultQuery.getString(2) + "\n");
             buffer.append("IMC: " + resultQuery.getString(5) + "\n");
             buffer.append("\n");
-            Log.d("Acumulador", "antes " + accumulador);
             lineEntries.add(new Entry(accumulador, resultQuery.getFloat(5)));
+            if(accumulador == 1f){
+                minMaxDates[0] = resultQuery.getString(1);
+            } else {
+                minMaxDates[1] = resultQuery.getString(1);
+            }
             accumulador++;
-            Log.d("Acumulador", "después " + accumulador);
         }
         Log.d("HOLISSS", buffer.toString());
+        if (accumulador>=1f){
+            tvlbls.setText(minMaxDates[0].toString());
+            tvlbls2.setText(minMaxDates[1].toString());
+        } else {
+            tvlbls3.setText(minMaxDates[0].toString());
+        }
+
     }
 
     public void openMainActivity(){
