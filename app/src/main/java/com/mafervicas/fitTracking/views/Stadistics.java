@@ -25,6 +25,8 @@ import com.mafervicas.fitTracking.model.DatosDB;
 import com.mafervicas.fitTracking.utils.Constants;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class Stadistics extends AppCompatActivity {
@@ -37,6 +39,7 @@ public class Stadistics extends AppCompatActivity {
     ImageButton buttonReturnDashboard;
     DatosDB myDb;
     TextView tvlbls, tvlbls2, tvlbls3;
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,12 +120,25 @@ public class Stadistics extends AppCompatActivity {
             accumulador++;
         }
         Log.d("HOLISSS", buffer.toString());
-        if (accumulador>=1f){
-            tvlbls.setText(minMaxDates[0].toString());
-            tvlbls2.setText(minMaxDates[1].toString());
-        } else {
-            tvlbls3.setText(minMaxDates[0].toString());
+        try {
+            if (accumulador>=1f){
+                tvlbls.setText(minMaxDates[0].toString());
+                tvlbls2.setText(minMaxDates[1].toString());
+            } else {
+                tvlbls3.setText(minMaxDates[0].toString());
+            }
+        } catch (Exception e){
+            Toast.makeText(this, Constants.ADD_INFO, Toast.LENGTH_LONG).show();
+            timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                   openMainActivity();
+                }
+            }, 5000);
+
         }
+
 
     }
 
