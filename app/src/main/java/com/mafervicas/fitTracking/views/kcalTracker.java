@@ -102,7 +102,7 @@ public class kcalTracker extends AppCompatActivity {
                 }
                 //Add data to bd
                 boolean addInformation = myDb.insertKcalData(strDate, kcals, kcalsRestantes, goalAccomplished);
-                if(addInformation = true) {
+                if(addInformation == true) {
                      //Make invisible progress bar
                     myProgressBar.setVisibility(View.INVISIBLE);
                     //Return again to the kcals needed

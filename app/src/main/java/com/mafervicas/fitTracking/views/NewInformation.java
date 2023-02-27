@@ -149,7 +149,7 @@ public class NewInformation extends AppCompatActivity {
 
         //Add information to the db
         boolean addInformation= myDb.insertMainData(strDate, pesoDouble, alturaDouble, edadInt, IMC, ingesta, kcals, exerciseFreq);
-        if(addInformation = true) {
+        if(addInformation == true) {
             //Make invisible progress bar
             myProgressBar.setVisibility(View.INVISIBLE);
             Toast.makeText(NewInformation.this, "Agregado correctamente", Toast.LENGTH_SHORT).show();
