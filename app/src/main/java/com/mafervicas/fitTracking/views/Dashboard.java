@@ -1,5 +1,6 @@
 package com.mafervicas.fitTracking.views;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
@@ -12,6 +13,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.mafervicas.fitTracking.R;
 
 import java.text.DecimalFormat;
@@ -22,6 +28,9 @@ public class Dashboard extends AppCompatActivity {
     TextView tvBienvenidaDashbord;
     ImageButton ibCronometro, ibTracker, ibUpdate, ibRecomendaciones, ibEstadisticas;
     private static final DecimalFormat df = new DecimalFormat("0.0");
+
+    //For adView
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +45,18 @@ public class Dashboard extends AppCompatActivity {
         ibUpdate = (ImageButton) findViewById(R.id.ibUpdate);
         ibTracker = (ImageButton) findViewById(R.id.ibTracker);
         ibEstadisticas = (ImageButton) findViewById(R.id.ibEstadisticas);
+        mAdView = findViewById(R.id.adView);
+
+        //For AdView - Initialize
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+        //Request
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         //For buttons
         ibCronometro.setOnClickListener(new View.OnClickListener() {
