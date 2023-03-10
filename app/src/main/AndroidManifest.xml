@@ -46,7 +46,8 @@
         </activity>
         <activity android:name="com.mafervicas.fitTracking.views.Recomendaciones" />
         <activity android:name="com.mafervicas.fitTracking.views.Cronometro" />
-        <activity android:name="com.mafervicas.fitTracking.views.SplashScreen">
+        <activity android:name="com.mafervicas.fitTracking.views.SplashScreen"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
