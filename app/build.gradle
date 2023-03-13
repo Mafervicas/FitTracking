@@ -16,13 +16,13 @@ android {
         exclude 'META-INF/notice.txt'
         exclude 'META-INF/ASL2.0'
     }
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion '30.0.2'
 
     defaultConfig {
         applicationId "com.mafervicas.fitTracking"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -55,6 +55,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.3.0'
     //For the graph
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+    //For the ads
+    implementation 'com.google.android.gms:play-services-ads:21.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
