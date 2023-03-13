@@ -57,6 +57,7 @@ Más información [consulta aquí](https://www.canva.com/design/DAE4ptBofTY/8uzE
 
 ### Diagrama
 Dividido en 3 fases
+![DiagramaGantt](https://user-images.githubusercontent.com/89888520/224815279-03cfabdc-2311-452e-bd3d-53985014ec50.jpeg)
 
 ---
 
