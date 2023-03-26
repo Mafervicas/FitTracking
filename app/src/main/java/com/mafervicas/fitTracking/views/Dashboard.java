@@ -32,6 +32,14 @@ public class Dashboard extends AppCompatActivity {
     //For adView
     private AdView mAdView;
 
+    //BackButton override
+
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

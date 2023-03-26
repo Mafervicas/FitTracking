@@ -41,6 +41,12 @@ public class Stadistics extends AppCompatActivity {
     TextView tvlbls, tvlbls2, tvlbls3;
     Timer timer;
 
+    //BackButton override
+    @Override
+    public void onBackPressed() {
+        openMainActivity();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

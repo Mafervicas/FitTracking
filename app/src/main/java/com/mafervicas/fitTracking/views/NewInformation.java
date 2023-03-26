@@ -44,6 +44,12 @@ public class NewInformation extends AppCompatActivity {
     DateFormat dateFormat = new SimpleDateFormat(Constants.PATTERN_DATE);
     String strDate = dateFormat.format(date);
 
+    //BackButton override
+    @Override
+    public void onBackPressed() {
+        openMainActivity();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
