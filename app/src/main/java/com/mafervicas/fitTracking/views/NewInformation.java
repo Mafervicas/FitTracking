@@ -112,7 +112,7 @@ public class NewInformation extends AppCompatActivity {
 
                     //We calculate IMC
                     Double IMC = pesoDouble / (alturaDouble * alturaDouble);
-                    Double Ingesta = (35 * pesoDouble)/100;
+                    Double Ingesta = (35 * pesoDouble)/1000;
 
                     //Get how much to multiply because exercise;
                     Double valueExercise = getInfoExercise(exerciseMultiply);
