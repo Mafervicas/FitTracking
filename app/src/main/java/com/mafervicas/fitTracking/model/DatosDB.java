@@ -105,4 +105,10 @@ public class DatosDB extends SQLiteOpenHelper {
         return res;
     }
 
+    //Method to retrieve all info from mainData_tb
+    public Cursor showAllData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME, null);
+        return res;
+    }
 }

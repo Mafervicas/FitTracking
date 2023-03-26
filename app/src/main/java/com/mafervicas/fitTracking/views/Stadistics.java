@@ -3,6 +3,7 @@ package com.mafervicas.fitTracking.views;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,6 +30,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.mafervicas.fitTracking.model.DatosDB;
 import com.mafervicas.fitTracking.utils.Constants;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -45,6 +48,8 @@ public class Stadistics extends AppCompatActivity {
     TextView tvlbls, tvlbls2, tvlbls3;
     Timer timer;
     ImageView ivFelicidades, ivAnimo;
+    Button btConsultaCalorias;
+    private static final DecimalFormat df = new DecimalFormat("0.0");
 
     //BackButton override
     @Override
@@ -62,6 +67,7 @@ public class Stadistics extends AppCompatActivity {
         tvlbls3 = (TextView) findViewById(R.id.tvlbls3);
         ivFelicidades = (ImageView) findViewById(R.id.ivFelicidades);
         ivAnimo = (ImageView) findViewById(R.id.ivAnimo);
+        btConsultaCalorias = (Button) findViewById(R.id.btConsultaCalorias);
         //Bring al variables needed for the graph
         lineChart = findViewById(R.id.lineChart);
         getEntries();
@@ -99,6 +105,24 @@ public class Stadistics extends AppCompatActivity {
                 openMainActivity();
             }
         });
+
+        //Button get all info
+        btConsultaCalorias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Cursor resa = myDb.showAllData();
+                StringBuffer buffer = new StringBuffer();
+                while (resa.moveToNext()) {
+                    buffer.append("---- Fecha: " + resa.getString(1) + " ----\n");
+                    buffer.append("Peso: " + resa.getDouble(2) + "\n");
+                    buffer.append("IMC: " + df.format(resa.getDouble(5)) + "\n");
+                    buffer.append("Kcals que debiste consumir: " + resa.getInt(7) + "\n");
+                    buffer.append("Frequencia de ejercicio: " + resa.getString(8) + "\n");
+                    buffer.append("\n");
+                }
+                Mensaje("Información", buffer.toString());
+            }
+        });
     }
 
     private void getEntries() {
@@ -120,7 +144,6 @@ public class Stadistics extends AppCompatActivity {
         String[] minMaxDates = new String[5];
         Double[] minMaxIMC = new Double[2];
         while (resultQuery.moveToNext()) {
-            buffer.append("Registro ID: " + resultQuery.getString(0) + "\n");
             buffer.append("Fecha: " + resultQuery.getString(1) + "\n");
             buffer.append("Peso: " + resultQuery.getString(2) + "\n");
             buffer.append("IMC: " + resultQuery.getString(5) + "\n");
@@ -171,6 +194,16 @@ public class Stadistics extends AppCompatActivity {
     public void openMainActivity(){
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
+    }
+
+    //Method that creates the message as alert
+    public void Mensaje(String title, String Message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        //Show the message
+        builder.show();
     }
 
 }
