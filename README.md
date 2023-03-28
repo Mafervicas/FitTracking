@@ -20,7 +20,7 @@ By *Mafer Vicas*
    6. Clases
    6. Base de datos
    6. Capturas de Pantalla
-   6. Video
+7. [Video final](#video)
 
 ---
 
@@ -98,5 +98,6 @@ Por otro lado, en shared preferences se guarda todo en un archivo xml, el cual c
 - imc
 - freqEjercicio
 
+---
 
-Video Final:
+### Video
