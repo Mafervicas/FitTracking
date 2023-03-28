@@ -13,11 +13,12 @@ By *Mafer Vicas*
 2. [Objetivo hacia el público](#objetivo)
 3. [Lista de requerimientos](#requerimientos)
 4. [Diseño en Figma](https://www.figma.com/file/qo4lYXQXlvcSNtgkwIwA3s/Untitled?node-id=0%3A1&t=gPpj2xznpNSbIGyk-1)
-5. [Diagrama de Gantt](#Diagrama)
+5. [Diagrama de Gantt](#diagrama)
 6. [Código](#codigo)
 
    6. Dependencias/Librerias
    6. Clases
+   6. Base de datos
    6. Capturas de Pantalla
    6. Video
 
@@ -52,6 +53,7 @@ Que más allá de conocer y después contar tu ingesta de calorías diaria, la u
 | Lista de links | Media | ✅
 | Seguridad | Alta | ✅
 | Estadística | Alta | ✅
+| S.O. 11 & 12 | Alta | ✅
 
 Más información [consulta aquí](https://www.canva.com/design/DAE4ptBofTY/8uzENDqkiwpn_UktNvpMqw/view?utm_content=DAE4ptBofTY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
@@ -81,5 +83,20 @@ Main Clases:
 - Registration
 - SplashScreen
 - Statistics
+- Congrats View
+
+Base de datos:
+Para este proyecto se utilizó SQLite y shared preferences propias de la funcionalidad nativa del celular para guardar información.
+En cuanto a la escructura de la base de datos en SQLite es la siguiente:
+<img width="507" alt="BD estructura" src="https://user-images.githubusercontent.com/89888520/228380694-8cba556e-0105-4cf1-8fa4-97246c1d578e.png">
+
+Por otro lado, en shared preferences se guarda todo en un archivo xml, el cual contiene los siguientes datos:
+- kcals
+- kcalsRestantes
+- name
+- water
+- imc
+- freqEjercicio
+
 
 Video Final:
