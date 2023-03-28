@@ -51,6 +51,7 @@
                 android:value="" />
         </activity>
         <activity android:name="com.mafervicas.fitTracking.views.Recomendaciones" />
+        <activity android:name="com.mafervicas.fitTracking.views.CongratsView" />
         <activity android:name="com.mafervicas.fitTracking.views.Cronometro" />
         <activity android:name="com.mafervicas.fitTracking.views.SplashScreen"
             android:exported="true">
