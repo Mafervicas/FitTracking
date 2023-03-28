@@ -27,6 +27,12 @@ public class Cronometro extends AppCompatActivity {
     //For adView
     private AdView mAdView;
 
+    //BackButton override
+    @Override
+    public void onBackPressed() {
+       openMainActivity();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

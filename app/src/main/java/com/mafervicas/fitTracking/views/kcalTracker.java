@@ -33,7 +33,7 @@ public class kcalTracker extends AppCompatActivity {
     private static final DecimalFormat df = new DecimalFormat("0.0");
     Double newCalories, kcals, kcalsRestantes;
     ProgressBar myProgressBar;
-    Integer goalAccomplished;
+    Integer goalAccomplished = 0;
 
     //SharedPreferences
     SharedPreferences sp;
@@ -46,6 +46,12 @@ public class kcalTracker extends AppCompatActivity {
     Date date = Calendar.getInstance().getTime();
     DateFormat dateFormat = new SimpleDateFormat(Constants.PATTERN_DATE);
     String strDate = dateFormat.format(date);
+
+    //BackButton override
+    @Override
+    public void onBackPressed() {
+        openMainActivity(goalAccomplished);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +76,7 @@ public class kcalTracker extends AppCompatActivity {
         buttonReturnDashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openMainActivity();
+                openMainActivity(goalAccomplished);
             }
         });
 
@@ -87,7 +93,7 @@ public class kcalTracker extends AppCompatActivity {
                 editor.putString("kcalsRestantes", String.valueOf(newCalories));
                 editor.commit();
                 //Return To Main Activity
-                openMainActivity();
+                openMainActivity(goalAccomplished);
             }
         });
 
@@ -97,7 +103,6 @@ public class kcalTracker extends AppCompatActivity {
             public void onClick(View view) {
                 myProgressBar.setVisibility(View.VISIBLE);
                 //To know if you accomplished the goal
-                goalAccomplished = 0;
                 if (kcalsRestantes <= kcals){
                     goalAccomplished = 1;
                 }
@@ -113,7 +118,7 @@ public class kcalTracker extends AppCompatActivity {
                     editor.commit();
                     //Make Toast & Return
                     Toast.makeText(kcalTracker.this, Constants.SUCCESS_DATA, Toast.LENGTH_LONG).show();
-                    openMainActivity();
+                    openMainActivity(goalAccomplished);
 
                 } else {
                     Toast.makeText(kcalTracker.this, Constants.ERROR_MODAL, Toast.LENGTH_LONG).show();
@@ -132,8 +137,13 @@ public class kcalTracker extends AppCompatActivity {
         btCalRestantes.setText(df.format(kcalsRestantes) + " kcls");
     }
 
-    public void openMainActivity(){
-        Intent intent = new Intent(this, Dashboard.class);
-        startActivity(intent);
+    public void openMainActivity(Integer goalAccomplished){
+        if (goalAccomplished == 1){
+            Intent intent = new Intent(this, CongratsView.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, Dashboard.class);
+            startActivity(intent);
+        }
     }
 }

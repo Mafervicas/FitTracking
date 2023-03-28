@@ -69,5 +69,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lineChart" />
 
+    <ImageView
+        android:id="@+id/ivFelicidades"
+        android:layout_width="319dp"
+        android:layout_height="153dp"
+        app:srcCompat="@drawable/felicidades"
+        app:layout_constraintTop_toBottomOf="@id/tvlbls2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"/>
+    <ImageView
+        android:id="@+id/ivAnimo"
+        android:layout_width="319dp"
+        android:layout_height="153dp"
+        app:srcCompat="@drawable/animo"
+        app:layout_constraintTop_toBottomOf="@id/tvlbls2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/btConsultaCalorias"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:text="Más Información"
+        android:backgroundTint="@color/pink_purple"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/ivAnimo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

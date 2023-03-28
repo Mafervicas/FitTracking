@@ -29,6 +29,12 @@ public class Recomendaciones extends AppCompatActivity {
     String _url7= "https://winniegana.com/";
     ImageButton buttonReturnDashboard;
 
+    //BackButton override
+    @Override
+    public void onBackPressed() {
+        openMainActivity();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

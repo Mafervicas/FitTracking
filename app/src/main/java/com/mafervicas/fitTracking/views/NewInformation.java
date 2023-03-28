@@ -44,6 +44,12 @@ public class NewInformation extends AppCompatActivity {
     DateFormat dateFormat = new SimpleDateFormat(Constants.PATTERN_DATE);
     String strDate = dateFormat.format(date);
 
+    //BackButton override
+    @Override
+    public void onBackPressed() {
+        openMainActivity();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,7 +112,7 @@ public class NewInformation extends AppCompatActivity {
 
                     //We calculate IMC
                     Double IMC = pesoDouble / (alturaDouble * alturaDouble);
-                    Double Ingesta = (35 * pesoDouble)/100;
+                    Double Ingesta = (35 * pesoDouble)/1000;
 
                     //Get how much to multiply because exercise;
                     Double valueExercise = getInfoExercise(exerciseMultiply);
