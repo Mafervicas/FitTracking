@@ -86,8 +86,10 @@ Main Clases:
 - Congrats View
 
 Base de datos:
+
 Para este proyecto se utilizó SQLite y shared preferences propias de la funcionalidad nativa del celular para guardar información.
 En cuanto a la escructura de la base de datos en SQLite es la siguiente:
+
 <img width="507" alt="BD estructura" src="https://user-images.githubusercontent.com/89888520/228380694-8cba556e-0105-4cf1-8fa4-97246c1d578e.png">
 
 Por otro lado, en shared preferences se guarda todo en un archivo xml, el cual contiene los siguientes datos:
@@ -97,6 +99,11 @@ Por otro lado, en shared preferences se guarda todo en un archivo xml, el cual c
 - water
 - imc
 - freqEjercicio
+
+Pantallas: 
+
+<img src='https://user-images.githubusercontent.com/89888520/228430185-7a3e0f0f-e333-42f3-be10-ba1880a6bbb7.png' width='625'>
+<img src='https://user-images.githubusercontent.com/89888520/228430189-9456e874-004c-4241-ae2f-a46f8e37e48e.png' width='625'>
 
 ---
 
