@@ -75,9 +75,21 @@ Dependencias del proyecto:
 | com.google.android.gms:play-services-ads:21.0.0 | Anuncios    |
 
 Main Clases:
-- Cronómetro
-- Dashboard
-- kcalTracker
+- **Cronómetro**: Utiliza la clase de 'Chronometer' para poder mostrar los datos en tiempo real con sus 3 métodos (iniciar, pausar, reset)
+- **Dashboard**: Cuenta con ImageButtons en la parte de arriba que al darle click muestran un toast con información específica, estos están pre-llenados gracias a la información proporcionada por el usuario que se guarda dentro del xml de SharedPreferences, por otro lado redirecciona a los diferentes widgets gracias a un intent de StartActivity 
+
+| Botón  | Función | 
+| ------------- |:-------------:| 
+| IMC| Según los datos introducidos y el cálculo hecho por la app, irá a compararlos con los rangos de IMC de la OMS, y arrojará en forma de toast tu en qué nivel se encuentra |
+| Agua | Según los datos introducidos y el cálculo hecho por la app
+
+- kcalTracker: Pantalla con conexión a la base de datos, específicamente a la tabla *kcalData*. Aquí podemos:
+
+
+| Botón  | Función | 
+| ------------- |:-------------:| 
+| Agregar | De las kcalsRestantes (Que vienen del sharedPreferences, les restará las kcals que ingrese el usuario, para que el resultado de esta resta actualize el valor de kcalsRestantes en SharedPreferences | 
+| Fin del día | Primero validará si se cumplió o no la meta de comer las mismas o menos calorías de las recomendadas, pasado de esto, insertará en la base de datos la fecha (como llave primaria para que únicamente se tenga 1 registro por día), las kcals objetivo, las restantes, y un bool de si se cumplió o no el objetivo. Finalmente si se cumplió el objetivo se redirecciona a Congrats View, de lo contrario el usuario verá el dashboard  | 
 - NewInformation
 - Recomendaciones
 - Registration
