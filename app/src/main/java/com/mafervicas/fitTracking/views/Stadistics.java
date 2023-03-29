@@ -68,6 +68,9 @@ public class Stadistics extends AppCompatActivity {
         ivFelicidades = (ImageView) findViewById(R.id.ivFelicidades);
         ivAnimo = (ImageView) findViewById(R.id.ivAnimo);
         btConsultaCalorias = (Button) findViewById(R.id.btConsultaCalorias);
+        //Set to invisible
+        ivFelicidades.setVisibility(INVISIBLE);
+        ivAnimo.setVisibility(INVISIBLE);
         //Bring al variables needed for the graph
         lineChart = findViewById(R.id.lineChart);
         getEntries();
@@ -183,7 +186,7 @@ public class Stadistics extends AppCompatActivity {
     }
 
     private void showImage(Double empezo, Double termino) {
-        if (empezo<termino){
+        if (empezo>termino){
             ivFelicidades.setVisibility(VISIBLE);
         } else {
             ivAnimo.setVisibility(VISIBLE);
