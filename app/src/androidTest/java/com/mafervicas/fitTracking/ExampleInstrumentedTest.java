@@ -10,6 +10,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
+import com.mafervicas.fitTracking.views.Registration;
+
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -21,6 +23,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.evidenciafinal", appContext.getPackageName());
+        assertEquals("com.mafervicas.fitTracking", appContext.getPackageName());
     }
 }

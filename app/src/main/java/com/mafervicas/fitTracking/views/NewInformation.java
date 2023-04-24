@@ -138,7 +138,7 @@ public class NewInformation extends AppCompatActivity {
         });
     }
 
-    private Double getInfoExercise(Integer exerciseMultiply) {
+    public Double getInfoExercise(Integer exerciseMultiply) {
         if (exerciseMultiply == 1){
             return 1.2;
         } else if(exerciseMultiply == 2){

@@ -152,7 +152,7 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
-    private String getFinalIMC(double IMC) {
+    public String getFinalIMC(double IMC) {
         //Condicionamos el saludable
         if(IMC<18.5){
             return "Insuficiencia ponderal";

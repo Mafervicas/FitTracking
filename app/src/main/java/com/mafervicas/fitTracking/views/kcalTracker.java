@@ -86,7 +86,7 @@ public class kcalTracker extends AppCompatActivity {
             public void onClick(View view) {
                 String CalsIngresadas = tiCalsIngresadas.getText().toString();
                 Double CalsIngresadasDouble = Double.parseDouble(CalsIngresadas);
-                newCalories = kcalsRestantes - CalsIngresadasDouble;
+                newCalories = kcalsToShow(kcalsRestantes, CalsIngresadasDouble);
                 //Add changes to Shared preferences
                 sp = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
@@ -125,6 +125,10 @@ public class kcalTracker extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public Double kcalsToShow(Double kcalsRestantes, Double calsIngresadasDouble) {
+        return kcalsRestantes - calsIngresadasDouble;
     }
 
     private void onInit() {

@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.mafervicas.fitTracking.views.Registration;
+
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
