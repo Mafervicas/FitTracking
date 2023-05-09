@@ -23,6 +23,7 @@ By *Mafer Vicas*
    6. Capturas de Pantalla
 7. [Versiones](#versiones)
 8. [Instalación](#instalacion)
+9. [Roadmap](#roadmap)
 
 ---
 
@@ -166,3 +167,8 @@ Aprende a usar Git con estos videos que cree para ti:
 - [Video 5](https://www.tiktok.com/@mafervicas/video/7190536292340436229)
 - [Video 6](https://www.tiktok.com/@mafervicas/video/7194948820587793669)
 - [Video 7](https://www.tiktok.com/@mafervicas/video/7216071756434410757)
+
+---
+
+### Roadmap
+No se piensa agregar o modificar algo en la app a futuro
