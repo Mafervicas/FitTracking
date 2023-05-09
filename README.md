@@ -16,11 +16,13 @@ By *Mafer Vicas*
 5. [Diagrama de Gantt](#diagrama)
 6. [Código](#codigo)
 
+   6. Diagrama de Arquitectura
    6. Dependencias/Librerias
    6. Clases
    6. Base de datos
    6. Capturas de Pantalla
-7. [Video final](#video)
+7. [Versiones](#versiones)
+8. [Instalación](#instalacion)
 
 ---
 
@@ -66,6 +68,10 @@ Dividido en 3 fases
 ---
 
 ### Codigo
+Diagrama de Arquitectura:
+
+<img src='https://user-images.githubusercontent.com/89888520/236985133-efd9149d-e33e-48d4-b33f-64d2b674d712.png' width='525'>
+
 Dependencias del proyecto:
 
 | Nombre  | Para qué | 
@@ -119,4 +125,44 @@ Pantallas:
 
 ---
 
-### Video
+### Versiones
+
+| Nombre  | Vesión
+| ------------- |:-------------:| 
+| Android Studio     | Dolphin 2021.3.1
+| compileSdkVersion   | 33    
+| minSdkVersion    | 33
+| Java| 8
+| Gradle Version | 6.7.1
+
+---
+
+### Instalacion
+1. Descarga Android Studio [aquí](https://developer.android.com)
+2. Descarga este proyecto
+3. Abre el ejecutable de Android Studio y a todo dale "Siguiente"
+4. Una vez descargado correctamente, selecciona en "Abrir proyecto" y selecciona la ruta en donde guardaste este proyecto
+5. Da en el botón verde de Play (Parte superior derecha)
+
+O simplemente, descarga el sdk, [aquí](https://1drv.ms/u/s!Ap3J9uffa690gQ7k3RgGT2xoqvyu?e=6lhwvM)
+
+Importante:
+- Todas pruebas se pueden ejecutar directamente en la rama de testing 
+- No se debe de configurar nada más, ya que todo está listo para correrse dentro de la rama de main 
+
+---
+
+### Manual
+
+
+---
+
+### Contribución
+Aprende a usar Git con estos videos que cree para ti:
+- [Video 1](https://www.tiktok.com/@mafervicas/video/7118150833031646469)
+- [Video 2](https://www.tiktok.com/@mafervicas/video/7148193621341211909)
+- [Video 3](https://www.tiktok.com/@mafervicas/video/7153726389559119110)
+- [Video 4](https://www.tiktok.com/@mafervicas/video/7159353652069616902)
+- [Video 5](https://www.tiktok.com/@mafervicas/video/7190536292340436229)
+- [Video 6](https://www.tiktok.com/@mafervicas/video/7194948820587793669)
+- [Video 7](https://www.tiktok.com/@mafervicas/video/7216071756434410757)
