@@ -154,7 +154,15 @@ Importante:
 ---
 
 ### Manual
-
+1) Compila o descarga el apk 
+2) Ingresa a la aplicación
+3) Introduce tus datos de registro
+4) Conoce todos los widgets
+     - Cronometro: Utilizalo para tus rutinas, únicamente da click al widget y pausa o ponle stop según tus necesidades
+     - Kcal Tracker: Lleva un conteo y registro de tus kcals consumidas, la app las calculará por ti y podrás introducirlas en el transcurso del día, al finalizar, asegúrate de darle click al botón "Finalizar día" ya que dependiendo a si cumpliste con la meta o no, te mostrará una pantalla especial.
+     - Nueva Información: Ve registrando tu avance en este widget, únicamente introduce tus datos y dale en guardar 
+     - Recomendaciones: Revisa algunos links a ciertos recursos que estoy segura te encantarán, sólo dale click y te llevarán a la liga
+     - Estadísticas: Aquí podrás ver tus últimos 5 registros y tu resultado, trata de mantener la buena racha :D 
 
 ---
 
